@@ -24,6 +24,40 @@ function scrollFunction() {
 // const navbarOffsetTop = navbar.offsetTop;
 
 /*------------------------------------------
+        = MUSIC PLAYER
+-------------------------------------------*/
+const musicBtn = document.querySelector(".music-box-toggle-btn");
+const musicBox = document.querySelector(".player");
+const curr_track = document.createElement('audio');
+const track_art = document.querySelector('.track-art');
+const playpauseBtn = document.querySelector('.playPause-track');
+const volumeSlider = document.querySelector('.volume_slider');
+let isPlaying = true;
+curr_track.src = '../assets/media/Ryan_Mack_-_Forever_And_Ever_And_Always.mp3';
+
+musicBtn.addEventListener('click', ()=>{
+    musicBox.classList.toggle('toggle-music-box');
+})
+playpauseBtn.addEventListener('click' ,()=>{
+    isPlaying ? pauseTrack() : playTrack();
+})
+volumeSlider.addEventListener('change', (evt)=>{
+    curr_track.volume = volumeSlider.value / 100;
+})
+function playTrack(){
+    curr_track.play();
+    isPlaying = true;
+    track_art.classList.add('rotate');
+    playpauseBtn.innerHTML = '<i class="fa fa-pause-circle fa-2x"></i>';
+}
+function pauseTrack(){
+    curr_track.pause();
+    isPlaying = false;
+    track_art.classList.remove('rotate');
+    playpauseBtn.innerHTML = '<i class="fa fa-play-circle fa-2x"></i>';
+}
+
+/*------------------------------------------
        COUNT DOWN TIMER
 -------------------------------------------*/
 // Set the date we're counting down to
@@ -173,6 +207,24 @@ for (let i = 0; i < list.length; i++) {
     })
 }
 
+/*------------------------------------------
+       SCROLL TO TOP
+-------------------------------------------*/
+const btnScrollToTop = document.querySelector(".back-to-top");
+
+// scroll to top of page when button clicked
+btnScrollToTop.addEventListener("click", e => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth"
+  });
+});
+
+// toggle 'scroll to top' based on scroll position
+window.addEventListener('scroll', e => {
+  btnScrollToTop.style.display = window.scrollY > 2000 ? 'block' : 'none';
+});
 
 const envelope = document.querySelector('.envelope-wrapper')
 const download = document.querySelector('.downloadBtn')

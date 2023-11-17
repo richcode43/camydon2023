@@ -167,7 +167,6 @@ opacity: 1;
   font-size: 20px;
   color: var(--darkLavender);
   background-color: var(--white);
-  /* margin-right: 5px; */
   padding: 3px;
   border-radius: 50%;
   border: 1px solid var(--darkLavender);
@@ -185,7 +184,7 @@ opacity: 1;
 @media (max-width:600px) {
   .donations{
     top: 500px;
-    left: 310px;
+    left: 430px;
     width: 83px;
     height: 70px;
   }
@@ -196,13 +195,35 @@ opacity: 1;
     font-size: 15px;
   }
 }
-@media (max-width:400px){
+@media (max-width:500px){
   .donations{
-    left: 250px;
-    top: 600px;
+    left: 290px;
+    top: 650px;
   }
 }
-
+@media (max-width:450px){
+  .donations{
+    left: 295px;
+    top: 650px;
+  }
+}
+@media(max-width:375px){
+  .donations{
+    left: 270px;
+    top: 400px;
+  }
+}
+@media(max-width:300px){
+  .donations{
+    width: 80px;
+    left: 180px;
+    top: 450px;
+    padding: 5px;
+  }
+  .donations p{
+    font-size: 14px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -274,6 +295,9 @@ button {
     .nav-menu{
         /* flex-direction: column; */
         display: none;
+    }
+    .section-title h2{
+      font-size: 30px;
     }
 }
 /* announcement */
@@ -383,7 +407,7 @@ button {
 @media (max-width: 991px) {
     .announcement .married-text h4 {
         font-size: 20px;
-        font-size: 1.11111rem;
+        font-size: 1rem;
         padding: 8px 18px;
     }
     .hero-slider, .slide-inner {
@@ -404,9 +428,23 @@ button {
 }
 @media (max-width: 768px) {
     .announcement .couple-text h2{
-        font-size: 55px;
+        font-size: 53px;
         margin-bottom: 20px;
     }
+}
+@media (max-width:300px) {
+  .announcement .married-text h4 {
+    font-size: 10px;
+  }
+  .announcement .save-the-date {
+    width: 170px;
+    height: 170px;
+    bottom: -80px;
+  }
+  .announcement .save-the-date h4 {
+    margin-top: 30px;
+    font-size: 20px;
+}
 }
 
 /* swiper container */
@@ -466,14 +504,36 @@ button {
 }
 @media(max-width:1024px){
   .swiper-slide:first-child img{
-    /* object-position: -60px 10%; */
+    object-position: -60px 10%;
   }
 }
 @media(max-width:768px){
   .swiper-slide:first-child img{
-    /* object-position: -20px 10%; */
+    object-position: -5px 10%;
+  }
+  .swiper-slide:nth-child(2) img{
+    object-position: -100px 10%;
   }
 }
+@media (max-width:600px) {
+  .swiper-slide:first-child img{
+    object-position: -100px 10%;
+  }
+}
+@media (max-width:500px) {
+  .swiper-slide:first-child img{
+    object-position: -200px 10%;
+  }
+}
+@media (max-width:375px) {
+  .swiper-slide:first-child img{
+    object-position: -150px 10%;
+  }
+  .swiper-slide:nth-child(2) img{
+    object-position: -60px 10%;
+  }
+}
+
 /*  */
 .couple-section {
   background-color: #fff;
@@ -518,7 +578,11 @@ button {
 .social-links a i{
   color: var(--darkLavender);
 }
-
+@media(max-width:1024px){
+  .groom .img-holder{
+    background-position-y: -70px;
+  }
+}
 @media (max-width: 991px) {
     .couple-section .couple .details{
         height: auto;
@@ -555,7 +619,7 @@ button {
         flex-direction: column-reverse;
     }
 }
-@media (max-width:400px) {
+@media (max-width:500px) {
   .groom .img-holder {
     background-position-y: -60px;
   }
@@ -646,7 +710,11 @@ button {
   width: 100%;
 }
 
-
+@media(max-width:1024px){
+  .countdown-section {
+    background-position: -70px 1100px;
+  }
+}
 @media (max-width: 991px) {
   .countdown-section {
     padding: 80px 0;
@@ -1439,7 +1507,6 @@ button {
     height: auto;
 }
 .accomodations h4{
-    font-family: "Great Vibes", cursive;
     font-size: 40px;
     color: var(--darkLavender);
 }
@@ -1501,7 +1568,7 @@ button {
     .hotel-Header{
         padding: 10px;
     }
-    .hotel-Header h4{
+    .accomodations h4{
         font-size: 30px;
     }
     

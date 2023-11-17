@@ -184,7 +184,7 @@ opacity: 1;
 /* media for cash donations */
 @media (max-width:600px) {
   .donations{
-    top: 700px;
+    top: 500px;
     left: 310px;
     width: 83px;
     height: 70px;
@@ -583,7 +583,7 @@ button {
 
 .countdown-section h2 {
   font-family: "Great Vibes", cursive;
-  font-size: 4rem;
+  font-size: 2rem;
   color: #fff;
   margin: 0;
   position: relative;
@@ -1410,8 +1410,11 @@ button {
     .colorPicker{
       grid-template-columns: 1fr;
     }
+    .colorPicker > .colorBox{
+      width: 100%;
+    }
     .colorPicker > .colorBox  div{
-        width: 200px;
+        width: 100%;
     }
 }
 
@@ -1576,7 +1579,13 @@ button {
 .airbnbInfo{
     left: 10px;
 }
-
+@media(max-width:300px){
+  .airbnb_details{
+    width: 260px;
+    transition: all 2s;
+    /* padding: 0; */
+  }
+}
 /*--------------------------------------------------------------
 #0.1    MODALS SECTION
 --------------------------------------------------------------*/

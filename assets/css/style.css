@@ -273,12 +273,14 @@ header {
   align-items: center;
   justify-content: space-evenly;
 }
-.logo {
+.nav-info >.logo {
   font-family: "Great Vibes", cursive;
-  font-weight: bold;
+  font-weight: 900;
   font-size: 30px;
+  margin-top: 10px;
+  color: var(--darkLavender);
 }
-button {
+.nav-info > button {
   display: none;
 }
 .nav-menu {
@@ -288,8 +290,18 @@ button {
   gap: 80px;
   margin: 10px 0;
 }
+
 .nav-menu li a {
   display: block;
+  color: black;
+  font-family: "Dosis", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.nav-menu a:hover,
+.nav-menu a.nav_active{
+  color: var(--darkLavender);
 }
 @media (max-width: 991px) {
     .nav-menu{

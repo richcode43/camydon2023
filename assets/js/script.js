@@ -1,3 +1,6 @@
+/*------------------------------------------
+        SHOW/HIDE NAV ON SCROLL
+-------------------------------------------*/
 window.onload = () =>{
     document.getElementById("site-header").style.display = "none";
 }
@@ -22,6 +25,8 @@ function scrollFunction() {
 // sticky navigation
 // const navbar = document.querySelector('#site-header');
 // const navbarOffsetTop = navbar.offsetTop;
+
+
 
 /*------------------------------------------
         = MUSIC PLAYER

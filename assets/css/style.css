@@ -429,7 +429,9 @@ button {
   height: 100%;
   object-fit: cover;
 }
-
+.swiper-slide:first-child img{
+  object-position: 10px 30%;
+}
 .swiper-button-prev,
 .swiper-button-next {
   display: none;
@@ -462,7 +464,16 @@ button {
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
 }
-
+@media(max-width:1024px){
+  .swiper-slide:first-child img{
+    /* object-position: -60px 10%; */
+  }
+}
+@media(max-width:768px){
+  .swiper-slide:first-child img{
+    /* object-position: -20px 10%; */
+  }
+}
 /*  */
 .couple-section {
   background-color: #fff;
@@ -1396,8 +1407,11 @@ button {
     }
 }
 @media (max-width:768px) {
+    .colorPicker{
+      grid-template-columns: 1fr;
+    }
     .colorPicker > .colorBox  div{
-        width: 150px;
+        width: 200px;
     }
 }
 

@@ -2123,7 +2123,7 @@ header {
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 20; /* Sit on top */
+  z-index: 700; /* Sit on top */
   padding: 100px 0;
   left: 0;
   top: 0;

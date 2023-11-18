@@ -2021,7 +2021,7 @@ header {
       font-size: 15px;
   } 
   .inputs{
-      gap: 50px;
+      display: block;
   }
   .inputDetails{
       justify-content: space-between;
@@ -2052,6 +2052,9 @@ header {
   }
   .secondBank{
       position: static;
+  }
+  inputs{
+    display: block;
   }
   .inputDetails label{
       width: 100%;

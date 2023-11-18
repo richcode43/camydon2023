@@ -353,6 +353,7 @@ const firstNumber = document.getElementById('accountNumber1');
 const sortCode = document.getElementById('sortCode');
 const copyButton1 = document.getElementById('copyButton1');
 const para = document.querySelector('.firstParagraph');
+const para2 = document.querySelector('.secondParagraph');
 copyButton1.addEventListener("click", ()=>{
     // Create a string to hold the concatenated values
     var concatenatedValues = bank1.value  + " " + firstName.value + " " + firstNumber.value + " " + sortCode.value;
@@ -367,7 +368,6 @@ copyButton1.addEventListener("click", ()=>{
 
     copyButton1.innerHTML = '<i class="fa-solid fa-check"></i>';
     para.innerHTML = 'copied'
-    console.log('check');
 
     setTimeout(function(){
         copyButton1.innerHTML = '<i class="fa-regular fa-clone"></i>'
@@ -393,9 +393,11 @@ copyButton2.addEventListener("click", ()=>{
         console.error("Error copying text: ", error);
     });
     copyButton2.innerHTML = '<i class="fa-solid fa-check"></i>';
+    para2.innerHTML = 'copied'
 
     setTimeout(function(){
         copyButton2.innerHTML = '<i class="fa-regular fa-clone"></i>'
+        para2.innerHTML = 'click the button to copy'
     }, 3000);
     
 });

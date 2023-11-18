@@ -1,8 +1,14 @@
 /*------------------------------------------
         SHOW/HIDE NAV ON SCROLL
 -------------------------------------------*/
+const sidebar = document.querySelector(".nav-menu"); 
+const menuLinks = document.querySelectorAll(".nav-menu li a"); 
+const openNav = document.getElementById("open");
+const closeNav = document.querySelector(".closeNav");
+
 window.onload = () =>{
     document.getElementById("site-header").style.display = "none";
+    // sidebar.style.width = "0";
 }
  window.onscroll = () =>{
     scrollFunction()
@@ -22,12 +28,33 @@ function scrollFunction() {
   }
 }
 
-// sticky navigation
-// const navbar = document.querySelector('#site-header');
-// const navbarOffsetTop = navbar.offsetTop;
 
+/*------------------------------------------
+        = SIDEBAR
+-------------------------------------------*/
 
-
+const main = document.querySelector(".page-wrapper");
+openNav.addEventListener('click', ()=>{
+    sidebar.style.width = "300px";
+    // document.body.style.backgroundColor = 'rgba(0,0,0,0.5)';
+});
+for (let i = 0; i < menuLinks.length; i++) {
+    menuLinks[i].addEventListener('click', () => {
+        // sidebar.classList.remove('visible');
+        console.log("clicked");
+        sidebar.style.width = "0";
+    });
+}  
+closeNav.addEventListener('click', ()=>{
+    sidebar.style.width = "0";
+    document.body.style.backgroundColor = "white";
+});
+// links.forEach(() =>{
+//     addEventListener('click', ()=>{
+//         // sidebar.style.width = "0";
+//         // document.body.style.backgroundColor = "red";
+//     })
+// })
 /*------------------------------------------
         = MUSIC PLAYER
 -------------------------------------------*/

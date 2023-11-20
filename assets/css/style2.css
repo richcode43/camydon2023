@@ -288,6 +288,10 @@ header {
 }
 .nav-info > button {
   display: none;
+  border: none;
+  font-size: 40px;
+  background-color: transparent;
+  border: none;
 }
 .nav-menu {
   list-style: none;
@@ -296,6 +300,7 @@ header {
   gap: 50px;
   margin: 10px 0;
   transition: all .5s;
+  /* width: 100%; */
 }
 .nav-menu i{
   color: var(--darkLavender);
@@ -321,9 +326,6 @@ header {
   }
   .nav-info > button {
     display: block;
-    font-size: 40px;
-    background-color: transparent;
-    border: none;
   }
   .nav-menu{
     flex-direction: column;
@@ -620,8 +622,37 @@ header {
   width: 50%;
   height: auto;
 }
+.couple-section .details .signature:before {
+  content: "";
+  background-color: var(--darkLavender);
+  width: 15px;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.couple-section .details .signature {
+  font-family: "Great Vibes", cursive;
+  font-weight: bold;
+  font-size: 1.7rem;
+  /* display: block; */
+  padding-left: 25px;
+  margin-top: 15px;
+  position: relative;
+}
+.couple-section .bride .details-inner>.signature {
+  float: right;
+  padding-right: 25px;
+}
 .couple-section .details .detail-inner h3{
   color: var(--darkLavender);
+  text-transform: uppercase;
+  font-size: 25px;
 }
 .couple-section .bride .details .detail-inner {
   direction: rtl;
@@ -634,22 +665,32 @@ header {
   background: url(../images/couple/bride.jpg) center center/cover no-repeat;
   background-position-y: -20px;
 }
+.couple-section .details p {
+  font-size: 20px;
+  line-height: 1.8em;
+  font-family: 'Times New Roman', Times, serif;
+}
 .couple-div .bride .details-inner p {
   direction: rtl;
 }
 .couple >.details {
   background-color: #E6E6FA;
 }
-.social-links {
+
+.detail-inner .social-links li {
+  float: left;
+  margin-right: 10px;
   list-style: none;
-  padding: 0;
+  /* display: inline; */
 }
-.social-links li {
-  display: inline;
-}
-.social-links a i{
+.detail-inner .social-links a {
+  font-size: 15px;
   color: var(--darkLavender);
+  border-radius: 50%;
+  float: left;
+  /* padding: 20px; */
 }
+
 @media(max-width:1024px){
   .groom .img-holder{
     background-position-y: -70px;
@@ -920,6 +961,7 @@ header {
   align-items: center;
   border-radius: 50%;
   position: absolute;
+  z-index: 500;
 }
 @media (max-width: 1024px) {
   .story-section .story-timeline .img-holder img {
@@ -1785,6 +1827,14 @@ header {
     align-items: center;
     justify-content: center;
 }
+
+/* owl carousel */
+/* .owl-item{
+  width: 500px;
+}
+.owl-item img{
+  width: 100%;
+} */
 @media(max-width: 991px){
     .airbnbs{
         justify-content: flex-start;

@@ -36,25 +36,18 @@ function scrollFunction() {
 const main = document.querySelector(".page-wrapper");
 openNav.addEventListener('click', ()=>{
     sidebar.style.width = "300px";
-    // document.body.style.backgroundColor = 'rgba(0,0,0,0.5)';
 });
-for (let i = 0; i < menuLinks.length; i++) {
-    menuLinks[i].addEventListener('click', () => {
-        // sidebar.classList.remove('visible');
-        console.log("clicked");
-        sidebar.style.width = "0";
-    });
-}  
+ 
 closeNav.addEventListener('click', ()=>{
     sidebar.style.width = "0";
     document.body.style.backgroundColor = "white";
 });
-// links.forEach(() =>{
-//     addEventListener('click', ()=>{
-//         // sidebar.style.width = "0";
-//         // document.body.style.backgroundColor = "red";
-//     })
-// })
+for (let i = 0; i < menuLinks.length; i++) {
+    menuLinks[i].addEventListener('click', () => {
+        console.log("clicked");
+        // sidebar.style.width = "0";
+    });
+} 
 /*------------------------------------------
         = MUSIC PLAYER
 -------------------------------------------*/
@@ -368,6 +361,7 @@ copyButton1.addEventListener("click", ()=>{
 
     copyButton1.innerHTML = '<i class="fa-solid fa-check"></i>';
     para.innerHTML = 'copied'
+    console.log('copied account');
 
     setTimeout(function(){
         copyButton1.innerHTML = '<i class="fa-regular fa-clone"></i>'
@@ -384,7 +378,6 @@ const copyButton2 = document.getElementById('copyButton2');
 copyButton2.addEventListener("click", ()=>{
     // Create a string to hold the concatenated values
     var concatenatedValues = bank2.value  + " " + secondName.value + " " + secondNumber.value;
-
     navigator.clipboard.writeText(concatenatedValues)
     .then(function() {
         console.log("Text copied successfully!");

@@ -152,7 +152,7 @@ opacity: 1;
   position: fixed;
   top: 200px;
   left: 20px;
-  z-index: 100;
+  z-index: 110;
   background: var(--darkLavender);
   border: 2px solid var(--white);
   display: flex;
@@ -211,7 +211,7 @@ opacity: 1;
 @media (max-width:450px){
   .donations{
     left: 295px;
-    top: 650px;
+    top: 600px;
   }
 }
 @media(max-width:375px){

@@ -13,7 +13,7 @@
 .music-box {
   position: fixed;
   display: flex;
-  z-index: 500;
+  z-index: 600;
   bottom: 100px;
   right: 30px;
 }
@@ -128,17 +128,23 @@ opacity: 1;
 }
 @media (max-width:768px) {
   .music-box button{
-    left: 20px;
+    top: 400px;
+    /* left: 20px; */
     bottom: 55px;
   }
   .player{
-    bottom: 40px;
-    /* left: 200px; */
-    right: 150px;
-    
+    bottom: 400px;
   }
 }
-
+@media (max-width:380px) {
+  .music-box button{
+    top: 350px;
+    bottom: 55px;
+  }
+  .player{
+    bottom: 230px;
+  }
+}
 /* donations */
 .donations{
   width: 100px;
@@ -211,7 +217,7 @@ opacity: 1;
 @media(max-width:375px){
   .donations{
     left: 270px;
-    top: 400px;
+    top: 450px;
   }
 }
 @media(max-width:300px){

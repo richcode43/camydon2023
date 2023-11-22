@@ -56,7 +56,7 @@ const track_art = document.querySelector(".track-art");
 const playpauseBtn = document.querySelector(".playPause-track");
 const volumeSlider = document.querySelector(".volume_slider");
 let isPlaying = true;
-curr_track.src = "../assets/media/Ryan_Mack_-_Forever_And_Ever_And_Always.mp3";
+curr_track.src = "../assets/media/Elvis_Presley-Cant_Help_Falling_in_Love.mp3";
 
 musicBtn.addEventListener("click", () => {
   musicBox.classList.toggle("toggle-music-box");

@@ -126,6 +126,14 @@ opacity: 1;
     justify-content: center;
     gap: 20px;
 }
+@media (max-width:400px) {
+  .music-box button{
+    bottom: 120px;
+  }
+  .player{
+    bottom: 200px;
+  }
+}
 /* donations */
 .donations{
   width: 100px;
@@ -252,7 +260,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 5;
+  z-index: 700;
   transition: 1s;
   height: auto;
 }
@@ -282,7 +290,6 @@ header {
   gap: 50px;
   margin: 10px 0;
   transition: all .5s;
-  /* width: 100%; */
 }
 .nav-menu i{
   color: var(--darkLavender);

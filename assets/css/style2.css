@@ -18,13 +18,13 @@
   right: 30px;
 }
 .music-box button {
-  background: transparent;
+  background: var(--darkLavender);
   width: 40px;
   height: 40px;
   line-height: 37px;
   font-size: 18px;
-  color: var(--darkLavender);
-  border: 1px solid var(--darkLavender);
+  color: var(--white);
+  border: 1px solid var(--white);
   position: fixed;
   right: 30px;
   bottom: 120px;
@@ -126,22 +126,19 @@ opacity: 1;
     justify-content: center;
     gap: 20px;
 }
-@media (max-width:450px) {
+@media (max-width:768px) {
   .music-box button{
-    bottom: 120px;
+    left: 20px;
+    bottom: 55px;
   }
   .player{
-    bottom: 150px;
+    bottom: 40px;
+    /* left: 200px; */
+    right: 150px;
+    
   }
 }
-@media (max-width:390px) {
-  .music-box button{
-    bottom: 220px;
-  }
-  .player{
-    bottom: 200px;
-  }
-}
+
 /* donations */
 .donations{
   width: 100px;
@@ -1996,8 +1993,13 @@ header {
   .site-footer{
     background-position-y:0px;
   }
+  
 }
-
+@media(max-width:450px){
+  .site-footer .back-to-top{
+    bottom: 20px;
+  }
+}
 /*----------------------
 #0.1  CASH GIFT MODAL
 -----------------------*/

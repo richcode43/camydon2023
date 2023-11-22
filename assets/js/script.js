@@ -404,3 +404,21 @@ copyButton2.addEventListener("click", () => {
     para2.innerHTML = "click the button to copy";
   }, 3000);
 });
+
+/*------------------------------------------
+       SHOW AND HIDE TEXT
+-------------------------------------------*/
+var moreSpan = document.querySelectorAll('.more_span');
+var showBtn = document.querySelectorAll('.showHideBtn');
+
+for(let i =0; i <moreSpan.length; i++){
+  moreSpan[i].style.display = 'none';
+}
+
+for(let i =0; j <showBtn.length; j++){
+  
+}
+// showBtn.addEventListener('click', () =>{
+//   // moreSpan.style.display = 'none';
+//   // showBtn.innerHTML = 'See more'
+// })

@@ -25,9 +25,9 @@
   font-size: 18px;
   color: var(--darkLavender);
   border: 1px solid var(--darkLavender);
-  position: absolute;
-  right: 5px;
-  bottom: 30px;
+  position: fixed;
+  right: 30px;
+  bottom: 120px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -o-border-radius: 50%;
@@ -53,7 +53,7 @@ opacity: 1;
   position: absolute;
   padding: 10px;
   right: 50%;
-  bottom: 60px;
+  bottom: 80px;
   width: 225px;
   background: #f1f3f4;
   border-radius: 20px;
@@ -126,9 +126,17 @@ opacity: 1;
     justify-content: center;
     gap: 20px;
 }
-@media (max-width:400px) {
+@media (max-width:450px) {
   .music-box button{
     bottom: 120px;
+  }
+  .player{
+    bottom: 150px;
+  }
+}
+@media (max-width:390px) {
+  .music-box button{
+    bottom: 220px;
   }
   .player{
     bottom: 200px;

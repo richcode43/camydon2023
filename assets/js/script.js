@@ -419,10 +419,11 @@ for(let j =0; j <showBtn.length; j++){
   showBtn[j].addEventListener('click',()=>{
     if(moreSpan[j].style.display =='none'){
       moreSpan[j].style.display = 'block'
-      // showBtn[i].innerHTML = "See Less";
+      showBtn[j].innerHTML = "See Less";
     }
     else{
       moreSpan[j].style.display = 'none'
+      showBtn[j].innerHTML = "See More";
     }
   })
 }

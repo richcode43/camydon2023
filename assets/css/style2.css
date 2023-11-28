@@ -1358,7 +1358,8 @@ header {
     }
     .gallery-images>.itemBox{
         flex: 100%;
-        max-width: 100%;
+        max-width: 30%;
+        height: 200px;
     }
     .gallery-images>.itemBox img{
         width: 100%;

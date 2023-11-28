@@ -1877,6 +1877,7 @@ header {
 ----------------------*/
 .brand-section p{
   font-family: 'Times New Roman', Times, serif;
+  line-height: 20px;
 }
 .brand-section .brand-details{
   display: flex;

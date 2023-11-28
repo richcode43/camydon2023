@@ -1876,7 +1876,7 @@ header {
 #0.1  BRANDS SECTION
 ----------------------*/
 .brand-section p{
-  ont-family: 'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 .brand-section .brand-details{
   display: flex;

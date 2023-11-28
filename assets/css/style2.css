@@ -9,6 +9,7 @@
     --gold:#FFD700;
     --white: #ffffff;
 }
+
 /* music */
 .music-box {
   position: fixed;
@@ -1852,13 +1853,7 @@ header {
     justify-content: center;
 }
 
-/* owl carousel */
-/* .owl-item{
-  width: 500px;
-}
-.owl-item img{
-  width: 100%;
-} */
+
 @media(max-width: 991px){
     .airbnbs{
         justify-content: flex-start;
@@ -1880,11 +1875,8 @@ header {
 /*----------------------
 #0.1  BRANDS SECTION
 ----------------------*/
-.brand-section{
-  background: var(--white);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.brand-section p{
+  ont-family: 'Times New Roman', Times, serif;
 }
 .brand-section .brand-details{
   display: flex;
@@ -1898,12 +1890,7 @@ header {
   overflow-y: hidden;
   cursor: pointer;
 }
-.brand-details> div img{
-  /* filter: grayscale(100%); */
-}
-.brand-details>div:hover img{
-  /* filter: grayscale(0); */
-}
+
 .brand-section .brand-details::-webkit-scrollbar {
   display: none;
 }
@@ -2047,7 +2034,7 @@ header {
 }
 .inputDetails{
   display: flex;
-  gap: 50px;
+  gap: 20px;
 }
 .inputDetails label{
   width: 100%;
@@ -2163,7 +2150,7 @@ header {
   }
   .secondBank{
       position: absolute;
-      bottom: 180px;
+      bottom: 280px;
       right: 40px;
   }
   .inputDetails label{

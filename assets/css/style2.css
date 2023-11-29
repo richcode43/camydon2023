@@ -1423,9 +1423,9 @@ header {
   position: absolute;
   z-index: 2;
   border-top: 400px solid transparent;
-  border-right: 401px solid var(--peach);
-  border-left: 400px solid var(--peach);
-  border-bottom: 300px solid var(--peach);
+  border-right: 401px solid var #ff9a8a;
+  border-left: 400px solid #ff9a8a;
+  border-bottom: 300px solid #ff9a8a;
   bottom: 0;
 }
 .letter {
@@ -1447,9 +1447,9 @@ header {
 .heartlock {
   position: absolute;
   top: 45%;
-  left: 50%;
+  left: 40%;
   z-index: 4;
-  transform: translate(-50%, -20%) rotate(45deg);
+  /* transform: translate(-50%, -20%) rotate(45deg); */
   transition: transform 0.5s ease-in-out 1s;
   cursor: pointer;
   
@@ -1465,7 +1465,6 @@ header {
   transition-delay: 1s;
 }
 .flap > .heartlock {
-  transform: rotate(-180deg);
   transition-delay: 0.4s;
 }
 
@@ -1482,15 +1481,20 @@ header {
     .envelope-wrapper > .envelope::after {
         
         border-top: 300px solid transparent;
-        border-right: 350px solid var(--peach);
-        border-left: 350px solid var(--peach);
-        border-bottom: 400px solid var(--peach);
+        border-right: 350px solid #ff9a8a;
+        border-left: 350px solid #ff9a8a;
+        border-bottom: 400px solid #ff9a8a;
         bottom: 0;
     }
     .letter > .invitationCard a div{
         width: 360px;
         margin: auto;
     }
+}
+@media(max-width: 1024px){
+  .heartlock {
+    left: 35%;
+  }
 }
 @media (max-width: 600px) {
     .envelope-section{
@@ -1509,7 +1513,7 @@ header {
     .envelope-wrapper > .envelope::after {
         
         border-top: 200px solid transparent;
-        border-right: 200px solid #ff9a8a;
+        border-right: 220px solid #ff9a8a;
         border-left: 188px solid #ff9a8a;
         border-bottom: 300px solid #ff9a8a;
         bottom: 0;
@@ -1535,12 +1539,128 @@ header {
     }
     
 }
-@media (max-width: 400px){
-    .envelope-section{
-        display: none;
-    }
+@media(max-width:500px){
+  .envelope-wrapper > .envelope::before {
+        
+    border-top: 250px solid white;
+    border-right: 200px solid transparent;
+    border-left: 188px solid transparent;
+    top: 0;
 }
+  .envelope-wrapper > .envelope::after {
+      
+      border-top: 200px solid transparent;
+      border-right: 200px solid #ff9a8a;
+      border-left: 188px solid #ff9a8a;
+      border-bottom: 300px solid #ff9a8a;
+      bottom: 0;
+  }
 
+}
+@media(max-width:450px){
+  .envelope-wrapper > .envelope::after {
+      
+    border-top: 200px solid transparent;
+    border-right: 220px solid #ff9a8a;
+    border-left: 188px solid #ff9a8a;
+    border-bottom: 300px solid #ff9a8a;
+    bottom: 0;
+  }
+}
+@media(max-width:420px){
+  .envelope-wrapper > .envelope::after {
+      
+    border-top: 200px solid transparent;
+    border-right: 200px solid #ff9a8a;
+    border-left: 188px solid #ff9a8a;
+    border-bottom: 300px solid #ff9a8a;
+    bottom: 0;
+  }
+}
+@media (max-width: 400px){
+  .envelope-section{
+    padding: 10px;
+  }
+    .envelope-wrapper{
+      width: 100%;
+    }
+    .envelope{
+      margin-left: -40px;
+    }
+    .letter > .invitationCard a div {
+      width: 290px;
+      margin-right: -150px;
+  }
+  .envelope-wrapper > .envelope::before {
+        
+    border-top: 200px solid white;
+    border-right: 155px solid transparent;
+    border-left: 180px solid transparent;
+    top: 0;
+  }
+  .envelope-wrapper > .envelope::after {
+    /* #ff9a8a */
+    border-top: 100px solid transparent;
+    border-right: 185px solid #ff9a8a;
+    border-left: 180px solid #ff9a8a;
+    border-bottom: 400px solid #ff9a8a;
+    bottom: 0;
+  }
+  .envelope{
+    margin: auto;
+  }
+  .letter {
+    position: absolute;
+    right: 23%;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 1s ease-in-out;
+    padding: 20px 10px;
+  }
+  .heartlock {
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+    
+  .flap > .envelope .letter {
+    transform: scale(1);
+}
+}
+@media(max-width:375px){
+  .envelope-wrapper > .envelope::after {
+      
+    border-top: 200px solid transparent;
+    border-right: 160px solid #ff9a8a;
+    border-left: 188px solid #ff9a8a;
+    border-bottom: 300px solid #ff9a8a;
+    bottom: 0;
+  }
+}
+@media(max-width:370px){
+  .envelope-section{
+    max-width: 100%;
+  }
+  .envelope-wrapper > .envelope::before {
+        
+    border-top: 230px solid white;
+    border-right: 150px solid transparent;
+    border-left: 130px solid transparent;
+    top: 0;
+    /* display: none; */
+  }
+  .envelope-wrapper > .envelope::after {
+      
+      border-top: 200px solid transparent;
+      border-right: 150px solid #ff9a8a;
+      border-left: 185px solid #ff9a8a;
+      border-bottom: 300px solid #ff9a8a;
+      bottom: 0;
+      /* display: none; */
+  }
+
+}
 /*--------------------------------------------------------------
 #1.0	Color Of The Day
 --------------------------------------------------------------*/

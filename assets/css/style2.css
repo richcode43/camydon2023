@@ -215,10 +215,16 @@ opacity: 1;
     top: 600px;
   }
 }
-@media(max-width:375px){
+@media (max-width:420px){
   .donations{
-    left: 270px;
-    top: 450px;
+    left: 300px;
+    top: 600px;
+  }
+}
+@media(max-width:390px){
+  .donations{
+    left: 280px;
+    top: 500px;
   }
 }
 @media(max-width:300px){
@@ -1543,6 +1549,7 @@ header {
     justify-content: center;
     /* align-items: center; */
     gap: 40px;
+    width: 100%;
 }
 .colorPicker > .colorBox{
     background-color: white;
@@ -1603,8 +1610,9 @@ header {
         gap: 2px;
         order: 2;
     }
-    .colorDisplay{
+    .colors > .colorDisplay{
         order: 1;
+        display: none;
     }
     .colorPicker > .colorBox  div{
         width: 300px;
@@ -1616,7 +1624,7 @@ header {
 }
 @media (max-width:768px) {
     .colorPicker{
-      grid-template-columns: 1fr;
+      /* grid-template-columns: 1fr; */
     }
     .colorPicker > .colorBox{
       width: 100%;
@@ -1876,6 +1884,10 @@ header {
 /*----------------------
 #0.1  BRANDS SECTION
 ----------------------*/
+.brand-section{
+  width: 100%;
+}
+
 .brand-section p{
   font-family: 'Times New Roman', Times, serif;
   line-height: 20px;

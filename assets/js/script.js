@@ -427,7 +427,22 @@ for(let j =0; j <showBtn.length; j++){
     }
   })
 }
-// showBtn.addEventListener('click', () =>{
-//   // moreSpan.style.display = 'none';
-//   // showBtn.innerHTML = 'See more'
-// })
+/*------------------------------------------
+       POLL SECTION
+-------------------------------------------*/
+var pollBtn = document.querySelectorAll(".circle");
+
+for(let k = 0; k <pollBtn.length; k++){
+  pollBtn[k].addEventListener('click',()=>{
+    // if(moreSpan[j].style.display =='none'){
+    //   moreSpan[j].style.display = 'block'
+    //   showBtn[j].innerHTML = "See Less";
+    // }
+    // else{
+    //   moreSpan[j].style.display = 'none'
+    //   showBtn[j].innerHTML = "See More";
+    // }
+    console.log('button clicked');
+    pollBtn[k].style.backgroundColor = '#996fd6';
+  })
+}

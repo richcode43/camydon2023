@@ -2050,7 +2050,7 @@ header {
 .poll-details{
   background: white;
   border-radius: 15px;
-  max-width: 380px;
+  max-width: 100%;
   width: 500px;
   padding: 25px;
   margin: auto;
@@ -2093,16 +2093,7 @@ header {
   border-radius: 50%;
   background-color: white;
 }
-/* .poll-inner .circle::after{
-  content: '';
-  position: absolute;
-  height: 11px;
-  width: 11px;
-  background-color: #ccc;
-  top: 2px;
-  left: 2px;
-  border-radius: inherit;
-} */
+
 .poll-inner span{
   font-size: 16px;
   font-weight: bold;
@@ -2123,6 +2114,11 @@ header {
   background-color: var(--darkLavender);
   border-radius: inherit;
 
+}
+@media(max-width:768px){
+  .poll-details{
+    width: 350px;
+  }
 }
 /*----------------------
 #0.1  FOOTER SECTION

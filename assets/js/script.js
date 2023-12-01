@@ -430,19 +430,16 @@ for(let j =0; j <showBtn.length; j++){
 /*------------------------------------------
        POLL SECTION
 -------------------------------------------*/
-var pollBtn = document.querySelectorAll(".circle");
+var yesBtn = document.getElementById("yes");
+var noBtn = document.getElementById("no");
+var maybeBtn = document.getElementById("maybe");
 
-for(let k = 0; k <pollBtn.length; k++){
-  pollBtn[k].addEventListener('click',()=>{
-    // if(moreSpan[j].style.display =='none'){
-    //   moreSpan[j].style.display = 'block'
-    //   showBtn[j].innerHTML = "See Less";
-    // }
-    // else{
-    //   moreSpan[j].style.display = 'none'
-    //   showBtn[j].innerHTML = "See More";
-    // }
-    console.log('button clicked');
-    pollBtn[k].style.backgroundColor = '#996fd6';
-  })
-}
+yesBtn.addEventListener('click',()=>{
+  yesBtn.style.backgroundColor = '#996fd6';
+})
+noBtn.addEventListener('click',()=>{
+  noBtn.style.backgroundColor = '#996fd6';
+})
+maybeBtn.addEventListener('click',()=>{
+  maybeBtn.style.backgroundColor = '#996fd6';
+})

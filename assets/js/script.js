@@ -408,38 +408,112 @@ copyButton2.addEventListener("click", () => {
 /*------------------------------------------
        SHOW AND HIDE TEXT
 -------------------------------------------*/
-var moreSpan = document.querySelectorAll('.more_span');
-var showBtn = document.querySelectorAll('.showHideBtn');
+var moreSpan = document.querySelectorAll(".more_span");
+var showBtn = document.querySelectorAll(".showHideBtn");
 
-for(let i =0; i <moreSpan.length; i++){
-  moreSpan[i].style.display = 'none';
+for (let i = 0; i < moreSpan.length; i++) {
+  moreSpan[i].style.display = "none";
 }
 
-for(let j =0; j <showBtn.length; j++){
-  showBtn[j].addEventListener('click',()=>{
-    if(moreSpan[j].style.display =='none'){
-      moreSpan[j].style.display = 'block'
+for (let j = 0; j < showBtn.length; j++) {
+  showBtn[j].addEventListener("click", () => {
+    if (moreSpan[j].style.display == "none") {
+      moreSpan[j].style.display = "block";
       showBtn[j].innerHTML = "See Less";
-    }
-    else{
-      moreSpan[j].style.display = 'none'
+    } else {
+      moreSpan[j].style.display = "none";
       showBtn[j].innerHTML = "See More";
     }
-  })
+  });
 }
 /*------------------------------------------
        POLL SECTION
 -------------------------------------------*/
-var yesBtn = document.getElementById("yes");
-var noBtn = document.getElementById("no");
-var maybeBtn = document.getElementById("maybe");
+const yesBtn = document.getElementById("yes");
+const noBtn = document.getElementById("no");
+const maybeBtn = document.getElementById("maybe");
+const info = document.querySelector('.infoText');
+let newText = `<i>Thanks for Selecting an option</>`;
 
-yesBtn.addEventListener('click',()=>{
-  yesBtn.style.backgroundColor = '#996fd6';
-})
-noBtn.addEventListener('click',()=>{
-  noBtn.style.backgroundColor = '#996fd6';
-})
-maybeBtn.addEventListener('click',()=>{
-  maybeBtn.style.backgroundColor = '#996fd6';
-})
+// retaining counter value on page reload
+document.addEventListener("DOMContentLoaded", function () {
+  let yesCounter = localStorage.getItem("counterYes") || 0;
+  document.getElementById("counterYes").innerText = yesCounter;
+
+  let noCounter = localStorage.getItem("counterNo") || 0;
+  document.getElementById("counterNo").innerText = noCounter;
+
+  let maybeCounter = localStorage.getItem("counterMaybe") || 0;
+  document.getElementById("counterMaybe").innerText = maybeCounter;
+  
+});
+
+// disable other poll buttons when one button is selected
+function disableButton(buttonClicked) {
+  console.log(buttonClicked);
+  const allPollBtns = document.querySelectorAll(".circle");
+  console.log(allPollBtns);
+
+  allPollBtns.forEach((buttonInfo, index) => {
+    console.log(index);
+    if (buttonClicked.id !== buttonInfo.id) {
+      buttonInfo.disabled = true;
+    }
+  });
+}
+
+yesBtn.addEventListener("click", () => {
+  disableButton(this);
+  yesBtn.style.backgroundColor = "#996fd6";
+  document.querySelector('.infoText').innerHTML = newText;
+
+  // Get the current counter value from local storage
+  let yesCounter = localStorage.getItem("counterYes") || 0;
+
+  // Increment the counter
+  yesCounter++;
+
+  // Update the counter in local storage
+  localStorage.setItem("counterYes", yesCounter);
+
+  // Update the display
+  document.getElementById("counterYes").innerText = yesCounter;
+
+});
+
+noBtn.addEventListener("click", () => {
+  disableButton(this);
+  noBtn.style.backgroundColor = "#996fd6";
+  document.querySelector('.infoText').innerHTML = newText;
+
+  // Get the current counter value from local storage
+  let noCounter = localStorage.getItem("counterNo") || 0;
+
+  // Increment the counter
+  noCounter++;
+
+  // Update the counter in local storage
+  localStorage.setItem("counterNo", noCounter);
+
+  // Update the display
+  document.getElementById("counterNo").innerText = noCounter;
+  
+});
+
+maybeBtn.addEventListener("click", () => {
+  disableButton(this);
+  maybeBtn.style.backgroundColor = "#996fd6";
+  document.querySelector('.infoText').innerHTML = newText;
+
+  // Get the current counter value from local storage
+  let maybeCounter = localStorage.getItem("counterMaybe") || 0;
+
+  // Increment the counter
+  maybeCounter++;
+
+  // Update the counter in local storage
+  localStorage.setItem("counterMaybe", maybeCounter);
+
+  // Update the display
+  document.getElementById("counterMaybe").innerText = maybeCounter;
+});

@@ -886,11 +886,6 @@ header {
   position: absolute;
   left: 50%;
   top: 0;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  /* transform: translateX(-50%); */
 }
 .story-section .story-timeline .text-holder {
   border-top: 1px solid var(--lavender);
@@ -1661,6 +1656,11 @@ header {
   }
 
 }
+@media(max-width:300px){
+  .envelope-section{
+    display: none;
+  }
+}
 /*--------------------------------------------------------------
 #1.0	Color Of The Day
 --------------------------------------------------------------*/
@@ -1743,9 +1743,6 @@ header {
     }
 }
 @media (max-width:768px) {
-    .colorPicker{
-      /* grid-template-columns: 1fr; */
-    }
     .colorPicker > .colorBox{
       width: 100%;
     }
@@ -2098,23 +2095,24 @@ header {
   font-size: 16px;
   font-weight: bold;
 }
-.poll-info .progressBar{
-  height: 7px;
-  width: 100%;
+.poll-info progress{
+  /* height: 7px;
+  
   position: relative;
   margin: 8px 0 3px 0;
-  background-color: #f0f0f0;
-  border-radius: 30px;
+  background-color: transparent;
+  border-radius: 30px; */
+  width: 100%;
 }
-.poll-info .progressBar::after{
+/* .poll-info .progressBar::after{
   content: '';
   position: absolute;
   height: 100%;
   width: 50%;
   background-color: var(--darkLavender);
-  border-radius: inherit;
+  border-radius: inherit; */
 
-}
+/* } */
 @media(max-width:768px){
   .poll-details{
     width: 350px;

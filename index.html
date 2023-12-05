@@ -43,7 +43,8 @@
         <link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- custom css -->
         <link rel="stylesheet" media="all" href="assets/css/style2.css">
-    
+        
+        
     </head>
     <body>
         <div class="page-wrapper">
@@ -2158,7 +2159,17 @@
                             <a href="" target="_blank">
                                 <img src="assets/images/brands/Tlaurels.png" alt="" height="200" width="200">
                             </a>
+                        </div><div style="margin-top: 80px;">
+                            <a href="https://instagram.com/taiye_omokore?igshid=MzMyNGUyNmU2YQ==" target="_blank">
+                                <img src="assets/images/brands/klat.png" alt="" height="" width="200">
+                            </a>
                         </div>
+                        <div style="margin-top: 80px;">
+                            <a href="https://instagram.com/ernestjonesjewellers?igshid=MzMyNGUyNmU2YQ==" target="_blank">
+                                <img src="assets/images/brands/ernestjones.png" alt="" height="500" width="250">
+                            </a>
+                        </div>
+
                     </div>
                 </div> 
             </div> 
@@ -2181,26 +2192,27 @@
                         <div class="poll-details">
                             <h4>Will you Be Attending?</h4>
                             <p class="text-danger text-center infoText"><i>Kindly select an option by clicking on any of the circles</i></p>
-                            <div class="poll-area">
+                            <form class="poll-area">
                                 <label for="" class="poll-info">
                                     <div class="poll-inner">
                                         <div class="column">
-                                            <button class="circle" id="yes"></button>
+                                            <!-- <input type="radio" id="radioOption1" name="options" value="Yes"> -->
+                                            <!-- <button class="circle" id="yes"></button> -->
+                                            <input type="radio" id="yesOption" name="options" value="yes">
                                             <span class="text">YES</span>
                                         </div>
                                         <div>
-                                            <span class="number" id="counterYes">0 person(s)</span>
+                                            <span class="number" id="counterYes">0</span>
                                             <span class="ms-2">Person(s)</span>
                                         </div>
                                         
                                     </div>
-                                    <!-- <div class="progressBar" id="progress_bar"></div> -->
-                                    <!-- <progress id="progressBar" max="100" value="0"></progress> -->
                                 </label>
                                 <label for="" class="poll-info">
                                     <div class="poll-inner">
                                         <div class="column">
-                                            <button class="circle" id="no"></button>
+                                            <!-- <button class="circle" id="no"></button> -->
+                                            <input type="radio" id="noOption" name="options" value="no">
                                             <span class="text">NO</span>
                                         </div>
                                         <div>
@@ -2208,13 +2220,12 @@
                                             <span class="ms-2">Person(s)</span>
                                         </div>
                                     </div>
-                                    <!-- <div class="progressBar"></div> -->
-                                    <!-- <progress id="progressBar" max="100" value="0"></progress> -->
-                                </label>
+                                </label> 
                                 <label for="" class="poll-info">
                                     <div class="poll-inner">
                                         <div class="column">
-                                            <button class="circle" id="maybe"></button>
+                                            <!-- <button class="circle" id="maybe"></button> -->
+                                            <input type="radio" id="maybeOption" name="options" value="maybe">
                                             <span class="text">MAYBE</span>
                                         </div>
                                         <div>
@@ -2222,14 +2233,15 @@
                                             <span class="ms-2">Person(s)</span>
                                         </div>
                                     </div>
-                                    <!-- <div class="progressBar"></div> -->
-                                    <!-- <progress id="progressBar" max="100" value="0"></progress> -->
                                 </label>
-                            </div>
+                                <button class="submitBtn fs-6 mt-3" role="button" type="submit">SUBMIT</button>
+                            </form>
+                            
                         </div>
                     </div>
                 </div>
             </section>
+
         <!-- end of poll section -->
         <!-- Start Footer section -->
         <footer class="site-footer">
@@ -2382,6 +2394,41 @@
                     owl.trigger('stop.owl.autoplay')
                 })
             </script>
+            <!-- <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js"></script> -->
+            <!-- firebase -->
+            <script type="module">
+                // Import the functions you need from the SDKs you need
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+                // TODO: Add SDKs for Firebase products that you want to use
+                // https://firebase.google.com/docs/web/setup#available-libraries
+              
+                // Your web app's Firebase configuration
+                const firebaseConfig = {
+                  apiKey: "AIzaSyAGxHBjC9Z3z2SZvbo4lLXvNVRuLm4ZpGA",
+                  authDomain: "attendancepoll-camydon2023.firebaseapp.com",
+                  databaseURL: "https://attendancepoll-camydon2023-default-rtdb.firebaseio.com",
+                  projectId: "attendancepoll-camydon2023",
+                  storageBucket: "attendancepoll-camydon2023.appspot.com",
+                  messagingSenderId: "496347554965",
+                  appId: "1:496347554965:web:01bfaab1853d26e3c7e79c"
+                };
+              
+                // Initialize Firebase
+                const app = initializeApp(firebaseConfig);
+
+                import{getDatabase, set, get, update, remove, ref, child} 
+                from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js"
+
+                const database = firebase.database();
+
+                // Create a new entry in the database
+  
+            </script>
+            
             <script src="assets/js/script.js"></script>
+            
+            
+            
     </body>
 </html>

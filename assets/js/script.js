@@ -432,88 +432,79 @@ for (let j = 0; j < showBtn.length; j++) {
 const yesBtn = document.getElementById("yes");
 const noBtn = document.getElementById("no");
 const maybeBtn = document.getElementById("maybe");
-const info = document.querySelector('.infoText');
+const info = document.querySelector(".infoText");
 let newText = `<i>Thanks for Selecting an option</>`;
+const pollCounters = document.querySelectorAll(".number");
 
-// retaining counter value on page reload
-document.addEventListener("DOMContentLoaded", function () {
-  let yesCounter = localStorage.getItem("counterYes") || 0;
-  document.getElementById("counterYes").innerText = yesCounter;
+// const pollBtns = document.querySelectorAll('.circle');
+//
+// // add and remove color to a button
+// pollBtns.forEach((button, index) => {
+//   button.addEventListener('click', function () {
+//     // Clear all buttons to initial color
+//     const pollValue = document.querySelector('input[name="options"]:checked');
+//     console.log(pollValue);
+//     pollCounters[index].textContent = par
+//     pollBtns.forEach(b => b.style.backgroundColor = '');
 
-  let noCounter = localStorage.getItem("counterNo") || 0;
-  document.getElementById("counterNo").innerText = noCounter;
+//     // Change the color of the clicked button
+//     this.style.backgroundColor = '#996fd6';
+//   });
+// });
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAGxHBjC9Z3z2SZvbo4lLXvNVRuLm4ZpGA",
+//   authDomain: "attendancepoll-camydon2023.firebaseapp.com",
+//   databaseURL: "https://attendancepoll-camydon2023-default-rtdb.firebaseio.com",
+//   projectId: "attendancepoll-camydon2023",
+//   storageBucket: "attendancepoll-camydon2023.appspot.com",
+//   messagingSenderId: "496347554965",
+//   appId: "1:496347554965:web:01bfaab1853d26e3c7e79c"
+// };
 
-  let maybeCounter = localStorage.getItem("counterMaybe") || 0;
-  document.getElementById("counterMaybe").innerText = maybeCounter;
+// Initialize Firebase
+
+let form = document.querySelector(".poll-area");
+form.addEventListener("submit", handleFormSubmit);
+form.addEventListener("submit", ()=>{
   
 });
+const options = document.querySelectorAll('input[name="options"]');
 
-// disable other poll buttons when one button is selected
-function disableButton(buttonClicked) {
-  console.log(buttonClicked);
-  const allPollBtns = document.querySelectorAll(".circle");
-  console.log(allPollBtns);
+function handleFormSubmit(e) {
+  e.preventDefault();
+  const value = document.querySelector('input[name="options"]:checked').value;
 
-  allPollBtns.forEach((buttonInfo, index) => {
-    console.log(index);
-    if (buttonClicked.id !== buttonInfo.id) {
-      buttonInfo.disabled = true;
+
+  if(value)
+  options.forEach((input, i) => {
+    if (input.value === value) {
+      if (!input.disabled) {
+        localStorage.setItem("attendance",value)
+        const number = pollCounters[i];
+        let numberValue = parseInt(number.textContent);
+        number.textContent = ++numberValue;
+      }
+    }
+
+    input.setAttribute("disabled", true);
+  });
+
+  console.log(value);
+}
+
+function hasAttend(){
+  const hasAttend = localStorage.getItem("attendance")
+  if(hasAttend)
+  options.forEach((input, i) => {
+    
+    if(input.value !== hasAttend){
+      input.setAttribute("disabled", true);
+    }else{
+      input.setAttribute("disabled", false);
+      input.setAttribute("checked", true);
+
     }
   });
 }
 
-yesBtn.addEventListener("click", () => {
-  disableButton(this);
-  yesBtn.style.backgroundColor = "#996fd6";
-  document.querySelector('.infoText').innerHTML = newText;
-
-  // Get the current counter value from local storage
-  let yesCounter = localStorage.getItem("counterYes") || 0;
-
-  // Increment the counter
-  yesCounter++;
-
-  // Update the counter in local storage
-  localStorage.setItem("counterYes", yesCounter);
-
-  // Update the display
-  document.getElementById("counterYes").innerText = yesCounter;
-
-});
-
-noBtn.addEventListener("click", () => {
-  disableButton(this);
-  noBtn.style.backgroundColor = "#996fd6";
-  document.querySelector('.infoText').innerHTML = newText;
-
-  // Get the current counter value from local storage
-  let noCounter = localStorage.getItem("counterNo") || 0;
-
-  // Increment the counter
-  noCounter++;
-
-  // Update the counter in local storage
-  localStorage.setItem("counterNo", noCounter);
-
-  // Update the display
-  document.getElementById("counterNo").innerText = noCounter;
-  
-});
-
-maybeBtn.addEventListener("click", () => {
-  disableButton(this);
-  maybeBtn.style.backgroundColor = "#996fd6";
-  document.querySelector('.infoText').innerHTML = newText;
-
-  // Get the current counter value from local storage
-  let maybeCounter = localStorage.getItem("counterMaybe") || 0;
-
-  // Increment the counter
-  maybeCounter++;
-
-  // Update the counter in local storage
-  localStorage.setItem("counterMaybe", maybeCounter);
-
-  // Update the display
-  document.getElementById("counterMaybe").innerText = maybeCounter;
-});
+hasAttend()

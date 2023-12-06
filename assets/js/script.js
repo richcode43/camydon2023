@@ -436,30 +436,7 @@ const info = document.querySelector(".infoText");
 let newText = `<i>Thanks for Selecting an option</>`;
 const pollCounters = document.querySelectorAll(".number");
 
-// const pollBtns = document.querySelectorAll('.circle');
-//
-// // add and remove color to a button
-// pollBtns.forEach((button, index) => {
-//   button.addEventListener('click', function () {
-//     // Clear all buttons to initial color
-//     const pollValue = document.querySelector('input[name="options"]:checked');
-//     console.log(pollValue);
-//     pollCounters[index].textContent = par
-//     pollBtns.forEach(b => b.style.backgroundColor = '');
 
-//     // Change the color of the clicked button
-//     this.style.backgroundColor = '#996fd6';
-//   });
-// });
-// const firebaseConfig = {
-//   apiKey: "AIzaSyAGxHBjC9Z3z2SZvbo4lLXvNVRuLm4ZpGA",
-//   authDomain: "attendancepoll-camydon2023.firebaseapp.com",
-//   databaseURL: "https://attendancepoll-camydon2023-default-rtdb.firebaseio.com",
-//   projectId: "attendancepoll-camydon2023",
-//   storageBucket: "attendancepoll-camydon2023.appspot.com",
-//   messagingSenderId: "496347554965",
-//   appId: "1:496347554965:web:01bfaab1853d26e3c7e79c"
-// };
 
 // Initialize Firebase
 

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radio Selection</title>
+    <!-- Add Firebase SDK -->
+  </head>
+  <body>
+    <form id="radioForm">
+      <label>
+        <input type="radio" name="radioOption" value="Option 1" /> Option 1
+      </label>
+      <label>
+        <input type="radio" name="radioOption" value="Option 2" /> Option 2
+      </label>
+      <label>
+        <input type="radio" name="radioOption" value="Option 3" /> Option 3
+      </label>
+      <button type="button" onclick="storeSelectedOption()">
+        Store Selected Option
+      </button>
+    </form>
+
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+    <script>
+      // Your Firebase configuration
+    //   const firebaseConfig = {
+    //     apiKey: "AIzaSyA4pOA2BsKg4mmDbsCOt-OVq2FIOEciYh0",
+    //     authDomain: "test-34537.firebaseapp.com",
+    //     projectId: "test-34537",
+    //     storageBucket: "test-34537.appspot.com",
+    //     messagingSenderId: "525396060987",
+    //     databaseURL: "https://test-34537-default-rtdb.firebaseio.com",
+    //     appId: "1:525396060987:web:9eba353b76e9397cc5e51e",
+    //     measurementId: "G-1YFXWG61KY",
+    //   };
+    const firebaseConfig = {
+    apiKey: "AIzaSyAGxHBjC9Z3z2SZvbo4lLXvNVRuLm4ZpGA",
+    authDomain: "attendancepoll-camydon2023.firebaseapp.com",
+    databaseURL: "https://attendancepoll-camydon2023-default-rtdb.firebaseio.com",
+    projectId: "attendancepoll-camydon2023",
+    storageBucket: "attendancepoll-camydon2023.appspot.com",
+    messagingSenderId: "496347554965",
+    appId: "1:496347554965:web:01bfaab1853d26e3c7e79c"
+    };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // Function to store the selected option in Firebase
+      function storeSelectedOption() {
+        const selectedOption = document.querySelector(
+          'input[name="radioOption"]:checked'
+        );
+
+        if (selectedOption) {
+          const selectedValue = selectedOption.value;
+
+          // Get a reference to the database
+          const database = firebase.database();
+
+          // Store the selected value in Firebase
+          database.ref("attendance/options").push(selectedValue);
+
+          alert(`Selected option "${selectedValue}" stored in Firebase.`);
+        } else {
+          alert("Please select an option before storing.");
+        }
+      }
+      function retrieveOptions() {
+        // Get a reference to the database
+        const database = firebase.database();
+
+        // Get a reference to the "options" node
+        const optionsRef = database.ref("attendance/options");
+
+        // Use once to retrieve the data exactly once
+        optionsRef
+          .once("value")
+          .then((snapshot) => {
+            // Get the data from the snapshot
+            const optionsData = snapshot.val();
+
+            // Check if there are any options
+            if (optionsData) {
+              // optionsData is an object, convert it to an array if needed
+              const optionsArray = Object.values(optionsData);
+
+              // Now you can use the optionsArray as needed
+              console.log("Options Array:", optionsArray);
+            } else {
+              console.log("No options available.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error retrieving options:", error);
+          });
+      }
+
+      retrieveOptions()
+    </script>
+  </body>
+</html>

@@ -686,6 +686,9 @@ header {
   background: url(../images/couple/bride.jpg) center center/cover no-repeat;
   background-position-y: -20px;
 }
+.bride .detail-inner>.social-links{
+  float: right;
+}
 .couple-section .details p {
   font-size: 20px;
   line-height: 1.8em;
@@ -762,6 +765,10 @@ header {
     }
     .bride{
         flex-direction: column-reverse;
+    }
+    .bride .detail-inner>.social-links{
+      float: left;
+      margin-left: -30px;
     }
 }
 @media (max-width:500px) {

@@ -1,1 +1,1 @@
-this is a wedding file
+this is a wedding website
